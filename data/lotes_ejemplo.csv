@@ -1,0 +1,4 @@
+id,categoria,descripcion,cantidad,peso_kg,volumen_m3,requiere_frio,fecha_caducidad,donante_id
+LOT-C01,medico,Guantes quirurgicos,500,120,2,False,2027-03-01,DON-001
+LOT-C02,agua,Tanques plegables 1000L,40,800,12,False,2029-01-01,DON-005
+LOT-C03,alimento,Arroz fortificado,1000,20000,30,False,2026-10-15,DON-003

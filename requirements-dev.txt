@@ -1,0 +1,3 @@
+# Dependencias de desarrollo. El sistema en sí solo usa la librería estándar
+# (incluido tkinter). Para ejecutar las pruebas:
+pytest>=7.0

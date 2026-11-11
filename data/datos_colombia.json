@@ -1,0 +1,49 @@
+{
+  "donantes": [
+    {"id": "DON-001", "nombre": "Cruz Roja Colombiana", "tipo": "ong", "pais": "Colombia"},
+    {"id": "DON-002", "nombre": "UNICEF", "tipo": "internacional", "pais": "Suiza"},
+    {"id": "DON-003", "nombre": "Grupo Éxito", "tipo": "empresa", "pais": "Colombia"},
+    {"id": "DON-004", "nombre": "Fundación Solidaridad por Colombia", "tipo": "ong", "pais": "Colombia"},
+    {"id": "DON-005", "nombre": "USAID", "tipo": "internacional", "pais": "Estados Unidos"},
+    {"id": "DON-006", "nombre": "Bavaria S.A.", "tipo": "empresa", "pais": "Colombia"},
+    {"id": "DON-007", "nombre": "Ana María Restrepo", "tipo": "persona", "pais": "Colombia"}
+  ],
+  "centros": [
+    {"id": "CA-BOG", "nombre": "Centro de Acopio El Dorado", "ciudad": "Bogota", "capacidad_m3": 5000, "tiene_cadena_frio": true},
+    {"id": "CA-MED", "nombre": "Centro de Acopio Rionegro", "ciudad": "Medellin", "capacidad_m3": 3500, "tiene_cadena_frio": true},
+    {"id": "CA-CAL", "nombre": "Centro de Acopio Palmaseca", "ciudad": "Cali", "capacidad_m3": 3000, "tiene_cadena_frio": false},
+    {"id": "CA-BAQ", "nombre": "Puerto de Barranquilla", "ciudad": "Barranquilla", "capacidad_m3": 6000, "tiene_cadena_frio": true}
+  ],
+  "municipios": [
+    {"id": "MUN-001", "nombre": "Mocoa", "departamento": "Putumayo", "nivel_urgencia": 4, "poblacion": 45000, "necesidades": {"medico": 300, "agua": 500, "alimento": 400}},
+    {"id": "MUN-002", "nombre": "Quibdo", "departamento": "Choco", "nivel_urgencia": 4, "poblacion": 130000, "necesidades": {"agua": 800, "alimento": 600, "refugio": 200}},
+    {"id": "MUN-003", "nombre": "Tumaco", "departamento": "Narino", "nivel_urgencia": 3, "poblacion": 200000, "necesidades": {"medico": 250, "agua": 400}},
+    {"id": "MUN-004", "nombre": "Dibulla", "departamento": "La Guajira", "nivel_urgencia": 3, "poblacion": 35000, "necesidades": {"agua": 300, "refugio": 150}},
+    {"id": "MUN-005", "nombre": "Puerto Carreno", "departamento": "Vichada", "nivel_urgencia": 2, "poblacion": 18000, "necesidades": {"alimento": 200, "medico": 80}},
+    {"id": "MUN-006", "nombre": "San Jose del Guaviare", "departamento": "Guaviare", "nivel_urgencia": 2, "poblacion": 70000, "necesidades": {"alimento": 250, "agua": 200}}
+  ],
+  "lotes": [
+    {"id": "LOT-0001", "categoria": "medico", "descripcion": "Kits de triaje quirurgico", "cantidad": 200, "peso_kg": 1500, "volumen_m3": 12, "requiere_frio": false, "fecha_caducidad": "2026-08-30", "donante_id": "DON-001"},
+    {"id": "LOT-0002", "categoria": "medico", "descripcion": "Vacunas refrigeradas", "cantidad": 150, "peso_kg": 400, "volumen_m3": 5, "requiere_frio": true, "fecha_caducidad": "2026-04-10", "donante_id": "DON-002"},
+    {"id": "LOT-0003", "categoria": "agua", "descripcion": "Bidones de agua potable 20L", "cantidad": 900, "peso_kg": 18000, "volumen_m3": 30, "requiere_frio": false, "fecha_caducidad": "2027-01-15", "donante_id": "DON-003"},
+    {"id": "LOT-0004", "categoria": "agua", "descripcion": "Planta potabilizadora portatil", "cantidad": 300, "peso_kg": 6000, "volumen_m3": 20, "requiere_frio": false, "fecha_caducidad": "2030-01-01", "donante_id": "DON-005"},
+    {"id": "LOT-0005", "categoria": "alimento", "descripcion": "Enlatados no perecederos", "cantidad": 800, "peso_kg": 9600, "volumen_m3": 25, "requiere_frio": false, "fecha_caducidad": "2026-11-20", "donante_id": "DON-003"},
+    {"id": "LOT-0006", "categoria": "alimento", "descripcion": "Bienestarina fortificada", "cantidad": 500, "peso_kg": 5000, "volumen_m3": 15, "requiere_frio": false, "fecha_caducidad": "2026-06-01", "donante_id": "DON-006"},
+    {"id": "LOT-0007", "categoria": "refugio", "descripcion": "Carpas familiares de emergencia", "cantidad": 250, "peso_kg": 3000, "volumen_m3": 40, "requiere_frio": false, "fecha_caducidad": "2035-01-01", "donante_id": "DON-004"},
+    {"id": "LOT-0008", "categoria": "fondos", "descripcion": "Aporte economico para compras locales", "cantidad": 50000000, "peso_kg": 0, "volumen_m3": 0, "requiere_frio": false, "fecha_caducidad": "2026-01-15", "donante_id": "DON-007"},
+    {"id": "LOT-0009", "categoria": "medico", "descripcion": "Antibioticos y analgesicos", "cantidad": 180, "peso_kg": 600, "volumen_m3": 6, "requiere_frio": false, "fecha_caducidad": "2026-03-01", "donante_id": "DON-001"},
+    {"id": "LOT-0010", "categoria": "agua", "descripcion": "Sobres purificadores de agua", "cantidad": 400, "peso_kg": 200, "volumen_m3": 3, "requiere_frio": false, "fecha_caducidad": "2027-05-01", "donante_id": "DON-002"}
+  ],
+  "rutas": [
+    {"origen": "CA-BOG", "destino": "MUN-001", "peso": 560},
+    {"origen": "CA-BOG", "destino": "MUN-006", "peso": 390},
+    {"origen": "CA-CAL", "destino": "MUN-001", "peso": 340},
+    {"origen": "CA-CAL", "destino": "MUN-003", "peso": 250},
+    {"origen": "CA-MED", "destino": "MUN-002", "peso": 230},
+    {"origen": "CA-BAQ", "destino": "MUN-004", "peso": 190},
+    {"origen": "CA-BOG", "destino": "CA-MED", "peso": 415},
+    {"origen": "CA-MED", "destino": "CA-CAL", "peso": 420},
+    {"origen": "CA-BOG", "destino": "MUN-005", "peso": 700},
+    {"origen": "MUN-003", "destino": "MUN-001", "peso": 300}
+  ]
+}
