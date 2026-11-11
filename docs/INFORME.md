@@ -2,6 +2,12 @@
 
 **Universidad EAFIT — Estructuras de Datos y Algoritmos — Evaluación Práctica 3**
 
+**Autores:**
+
+- Mariana Cardona Vidal
+- Juan Pablo Marín Rondón
+- Viliam Sofía Mesa Angarita
+
 ---
 
 ## 1. Resumen
