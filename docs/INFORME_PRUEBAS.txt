@@ -1,0 +1,107 @@
+================================================================================
+INFORME DE PRUEBAS — Sistema de Gestión y Distribución de Donaciones Post-Desastre
+Universidad EAFIT · Estructuras de Datos y Algoritmos · Evaluación Práctica 3
+
+Autores:
+  - Mariana Cardona Vidal
+  - Juan Pablo Marín Rondón
+  - Viliam Sofía Mesa Angarita
+
+Generado: 2026-11-11 04:11 UTC
+Python:   Python 3.11.15
+Comando:  PYTHONPATH=src python3 -m pytest -v
+================================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.7.0 -- /root/.pyenv/versions/3.11.15/bin/python3
+cachedir: .pytest_cache
+rootdir: /projects/sandbox/SistemaDonaciones
+configfile: pyproject.toml
+testpaths: tests
+plugins: platformdirs-4.13.5
+collecting ... collected 72 items
+
+tests/test_avl_tree.py::test_insert_search PASSED                        [  1%]
+tests/test_avl_tree.py::test_in_order_ordenado PASSED                    [  2%]
+tests/test_avl_tree.py::test_balanceo_tras_inserciones_ordenadas PASSED  [  4%]
+tests/test_avl_tree.py::test_range_query PASSED                          [  5%]
+tests/test_avl_tree.py::test_claves_duplicadas PASSED                    [  6%]
+tests/test_avl_tree.py::test_delete_valor_especifico PASSED              [  8%]
+tests/test_avl_tree.py::test_delete_nodo_completo_mantiene_balance PASSED [  9%]
+tests/test_avl_tree.py::test_min_max_key PASSED                          [ 11%]
+tests/test_avl_tree.py::test_arbol_vacio PASSED                          [ 12%]
+tests/test_benchmark.py::test_heap_vs_lista_lineal_extraccion_maximos PASSED [ 13%]
+tests/test_benchmark.py::test_avl_vs_lista_consulta_rango PASSED         [ 15%]
+tests/test_graph.py::test_vertices_y_aristas PASSED                      [ 16%]
+tests/test_graph.py::test_dijkstra_distancias PASSED                     [ 18%]
+tests/test_graph.py::test_shortest_path_reconstruye_ruta PASSED          [ 19%]
+tests/test_graph.py::test_nodo_inalcanzable PASSED                       [ 20%]
+tests/test_graph.py::test_peso_negativo_rechazado PASSED                 [ 22%]
+tests/test_graph.py::test_origen_inexistente PASSED                      [ 23%]
+tests/test_graph.py::test_grafo_dirigido PASSED                          [ 25%]
+tests/test_hash_map.py::test_set_get_basico PASSED                       [ 26%]
+tests/test_hash_map.py::test_actualizacion_no_incrementa_tamano PASSED   [ 27%]
+tests/test_hash_map.py::test_get_default_y_keyerror PASSED               [ 29%]
+tests/test_hash_map.py::test_delete_y_keyerror PASSED                    [ 30%]
+tests/test_hash_map.py::test_redimensionado_preserva_datos PASSED        [ 31%]
+tests/test_hash_map.py::test_contraccion_tras_borrados PASSED            [ 33%]
+tests/test_hash_map.py::test_iteracion_items_keys_values PASSED          [ 34%]
+tests/test_hash_map.py::test_azucar_sintactico PASSED                    [ 36%]
+tests/test_hash_map.py::test_colisiones_misma_clave_logica PASSED        [ 37%]
+tests/test_min_max_heap.py::test_peek_min_max_simple PASSED              [ 38%]
+tests/test_min_max_heap.py::test_pop_min_orden_ascendente PASSED         [ 40%]
+tests/test_min_max_heap.py::test_pop_max_orden_descendente PASSED        [ 41%]
+tests/test_min_max_heap.py::test_extraccion_mixta_consistente PASSED     [ 43%]
+tests/test_min_max_heap.py::test_heap_vacio_lanza PASSED                 [ 44%]
+tests/test_min_max_heap.py::test_un_solo_elemento PASSED                 [ 45%]
+tests/test_min_max_heap.py::test_key_personalizada_y_desempate_por_insercion PASSED [ 47%]
+tests/test_min_max_heap.py::test_stress_fuzz_min PASSED                  [ 48%]
+tests/test_models.py::test_donante_valido_y_inmutable PASSED             [ 50%]
+tests/test_models.py::test_donante_id_vacio_falla PASSED                 [ 51%]
+tests/test_models.py::test_lote_valido PASSED                            [ 52%]
+tests/test_models.py::test_lote_cantidad_negativa_falla PASSED           [ 54%]
+tests/test_models.py::test_lote_peso_negativo_falla PASSED               [ 55%]
+tests/test_models.py::test_lote_caducidad_anterior_al_evento_falla PASSED [ 56%]
+tests/test_models.py::test_fondos_no_restringen_caducidad PASSED         [ 58%]
+tests/test_models.py::test_fecha_invalida_falla PASSED                   [ 59%]
+tests/test_models.py::test_clave_caducidad PASSED                        [ 61%]
+tests/test_models.py::test_municipio_valido PASSED                       [ 62%]
+tests/test_models.py::test_municipio_necesidad_negativa_falla PASSED     [ 63%]
+tests/test_models.py::test_municipio_categoria_invalida_falla PASSED     [ 65%]
+tests/test_models.py::test_nivel_urgencia_desde_string PASSED            [ 66%]
+tests/test_models.py::test_centro_capacidad_negativa_falla PASSED        [ 68%]
+tests/test_models.py::test_roundtrip_lote PASSED                         [ 69%]
+tests/test_models.py::test_roundtrip_municipio PASSED                    [ 70%]
+tests/test_repository.py::test_carga_valida PASSED                       [ 72%]
+tests/test_repository.py::test_registro_nulo_se_omite PASSED             [ 73%]
+tests/test_repository.py::test_registro_mal_estructurado_no_aborta_carga PASSED [ 75%]
+tests/test_repository.py::test_cantidad_negativa_reportada PASSED        [ 76%]
+tests/test_repository.py::test_archivo_inexistente PASSED                [ 77%]
+tests/test_repository.py::test_json_corrupto PASSED                      [ 79%]
+tests/test_repository.py::test_guardar_y_recargar PASSED                 [ 80%]
+tests/test_system.py::test_registrar_donacion_donante_inexistente_falla PASSED [ 81%]
+tests/test_system.py::test_registrar_donacion_duplicada_falla PASSED     [ 83%]
+tests/test_system.py::test_busqueda_por_id PASSED                        [ 84%]
+tests/test_system.py::test_busqueda_por_categoria PASSED                 [ 86%]
+tests/test_system.py::test_proximos_a_caducar_rango PASSED               [ 87%]
+tests/test_system.py::test_asignacion_prioriza_municipio_mas_urgente PASSED [ 88%]
+tests/test_system.py::test_asignacion_fefo_prioriza_caducidad_proxima PASSED [ 90%]
+tests/test_system.py::test_lote_asignado_no_queda_disponible PASSED      [ 91%]
+tests/test_system.py::test_despachar_flujo_de_estados PASSED             [ 93%]
+tests/test_system.py::test_despachar_lote_no_asignado_falla PASSED       [ 94%]
+tests/test_system.py::test_alertas_desabastecimiento PASSED              [ 95%]
+tests/test_system.py::test_balance_consistente_tras_transacciones PASSED [ 97%]
+tests/test_system.py::test_marcar_vencidos PASSED                        [ 98%]
+tests/test_system.py::test_ruta_optima_integra_dijkstra PASSED           [100%]
+
+============================== 72 passed in 1.29s ==============================
+
+================================================================================
+DETALLE DE BENCHMARKS (estructuras elegidas vs. alternativas ingenuas)
+Comando: PYTHONPATH=src python3 -m pytest tests/test_benchmark.py -s
+================================================================================
+[heap] lista lineal: 0.1831s | min-max heap: 0.0524s
+PASSED
+[avl] lista O(n): 0.3187s | AVL O(log n + k): 0.0109s
+PASSED
+============================== 2 passed in 1.17s ===============================

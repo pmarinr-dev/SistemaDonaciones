@@ -401,9 +401,10 @@ class PdfBuilder:
     def spacer(self, h: float) -> None:
         self.y -= h
 
-    def cover(self, title: str, subtitle: str) -> None:
+    def cover(self, title: str, subtitle: str,
+              authors: List[str] | None = None) -> None:
         """Portada centrada en la primera página."""
-        self.y = PAGE_H * 0.62
+        self.y = PAGE_H * 0.66
         size = 22.0
         for line in _center_wrap(title, size, CONTENT_W):
             w = text_width(line, size, False)
@@ -421,6 +422,19 @@ class PdfBuilder:
         self.y -= 10
         self._line(PAGE_W * 0.3, self.y, PAGE_W * 0.7, self.y,
                    width=1.2, color=(0.09, 0.19, 0.36))
+        self.y -= 28
+        # Autores
+        if authors:
+            lbl = "Autores"
+            w = text_width(lbl, 11.0, False)
+            self._draw_pieces([Piece(lbl, "F2", 11.0, False)],
+                              (PAGE_W - w) / 2, self.y, (0.09, 0.19, 0.36))
+            self.y -= 20
+            for name in authors:
+                w = text_width(name, 11.5, False)
+                self._draw_pieces([Piece(name, "F1", 11.5, False)],
+                                  (PAGE_W - w) / 2, self.y, (0.15, 0.15, 0.15))
+                self.y -= 17
         self._new_page()
 
 
@@ -674,14 +688,29 @@ def build_pdf(pages_ops: List[List[bytes]], title: str) -> bytes:
     return bytes(out)
 
 
+def _extract_authors(md: str) -> List[str]:
+    """Extrae los nombres del bloque '**Autores:**' si existe."""
+    m = re.search(r"\*\*Autores:\*\*\s*\n(.*?)(?:\n\s*\n|\n---)", md, re.S)
+    if not m:
+        return []
+    return [
+        re.sub(r"^[-*]\s+", "", ln).strip()
+        for ln in m.group(1).splitlines()
+        if ln.strip().startswith(("-", "*"))
+    ]
+
+
 def convert(md_path: str, pdf_path: str) -> None:
     with open(md_path, "r", encoding="utf-8") as fh:
         md = fh.read()
+
+    authors = _extract_authors(md)
 
     builder = PdfBuilder()
     builder.cover(
         "Informe Técnico — Sistema de Gestión y Distribución de Donaciones Post-Desastre",
         "Universidad EAFIT · Estructuras de Datos y Algoritmos · Evaluación Práctica 3",
+        authors=authors,
     )
     render(md, builder)
     builder.finish()
